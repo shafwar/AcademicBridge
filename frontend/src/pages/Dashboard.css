@@ -1,0 +1,527 @@
+/* Dashboard.css - Modern & Animated */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5f7fa;
+  }
+  
+  /* Main content area */
+  .main-content {
+    width: 100%;
+    padding: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    box-sizing: border-box;
+  }
+  
+  .main-content.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Header area */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+  }
+  
+  .dashboard-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, #1976d2, #64b5f6);
+    border-radius: 10px;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .refresh-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: #f0f4f8;
+    border: none;
+    border-radius: 6px;
+    color: #2c3e50;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .refresh-button:hover {
+    background-color: #e3eaf2;
+    transform: translateY(-2px);
+  }
+  
+  /* Welcome card */
+  .welcome-card {
+    background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
+    border-radius: 12px;
+    padding: 25px;
+    color: white;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+    position: relative;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  .welcome-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  
+  .welcome-card::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+  }
+  
+  .welcome-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .welcome-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .welcome-card p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  /* Dashboard Cards */
+  .dashboard-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .dashboard-card.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .dashboard-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-icon {
+    margin-right: 12px;
+    color: #1976d2;
+    transition: transform 0.3s ease;
+  }
+  
+  .dashboard-card:hover .card-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
+  .card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  /* Status card specific styles */
+  .status-card {
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid #1976d2;
+  }
+  
+  .status-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(33, 150, 243, 0.05) 0%, rgba(33, 150, 243, 0) 70%);
+    z-index: 0;
+  }
+  
+  .dosen-info {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .dosen-info:hover {
+    background-color: #f0f4f8;
+  }
+  
+  .info-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-icon {
+    margin-right: 12px;
+    color: #546e7a;
+  }
+  
+  .info-label {
+    color: #546e7a;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+  
+  .nip-text {
+    font-family: 'Roboto Mono', monospace;
+    color: #546e7a;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  .status-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .status-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .status-item:hover {
+    background-color: #f0f4f8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .status-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(33, 150, 243, 0.1);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .status-item:hover .status-icon-container {
+    transform: scale(1.1);
+    background-color: rgba(33, 150, 243, 0.2);
+  }
+  
+  .status-icon {
+    color: #1976d2;
+  }
+  
+  .status-item h3 {
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #546e7a;
+  }
+  
+  .status-value-container {
+    margin-top: auto;
+  }
+  
+  .status-value {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .semester-value {
+    color: #1976d2;
+  }
+  
+  .inactive-status {
+    color: #ff9800;
+    font-size: 16px;
+  }
+  
+  .status-badge-container {
+    margin-top: auto;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .status-badge.aktif {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .status-badge.cuti {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .status-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Prestasi card specific styles */
+  .prestasi-card {
+    border-top: 3px solid #ff9800;
+  }
+  
+  .prestasi-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .prestasi-item {
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .prestasi-item:hover {
+    background-color: #f0f4f8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .prestasi-content {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .prestasi-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #546e7a;
+    margin-bottom: 10px;
+  }
+  
+  .prestasi-value-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  
+  .prestasi-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .prestasi-indicator {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .prestasi-indicator.positive {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+  }
+  
+  .prestasi-indicator.neutral {
+    background-color: rgba(33, 150, 243, 0.15);
+    color: #0d47a1;
+  }
+  
+  .prestasi-chart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 30%;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  .ipk-chart {
+    background: linear-gradient(to top, #4caf50 0%, transparent 100%);
+  }
+  
+  .sksk-chart {
+    background: linear-gradient(to top, #2196f3 0%, transparent 100%);
+  }
+  
+  /* Quick links card */
+  .quick-links-card {
+    border-top: 3px solid #673ab7;
+  }
+  
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+  
+  .quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+  }
+  
+  .quick-link:hover {
+    background-color: #f0f4f8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .quick-link-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .quick-link:hover .quick-link-icon {
+    transform: scale(1.1);
+  }
+  
+  .registrasi-icon {
+    background-color: rgba(33, 150, 243, 0.1);
+  }
+  
+  .irs-icon {
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+  
+  .khs-icon {
+    background-color: rgba(255, 152, 0, 0.1);
+  }
+  
+  .help-icon {
+    background-color: rgba(103, 58, 183, 0.1);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(33, 150, 243, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+    
+    .status-grid, .prestasi-grid {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .quick-links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

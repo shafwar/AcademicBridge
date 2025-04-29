@@ -1,0 +1,487 @@
+/* Registrasi.css - Modern & Animated */
+.registrasi-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .registrasi-content {
+    width: 100%;
+    padding: 25px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    box-sizing: border-box;
+  }
+  
+  .registrasi-content.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Header */
+  .registrasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .registrasi-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+  }
+  
+  .registrasi-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, #1976d2, #64b5f6);
+    border-radius: 10px;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #546e7a;
+  }
+  
+  .breadcrumb .separator {
+    margin: 0 8px;
+    color: #90a4ae;
+  }
+  
+  .breadcrumb .current {
+    color: #1976d2;
+    font-weight: 500;
+  }
+  
+  /* Status Banner */
+  .status-banner {
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  .banner-icon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  .banner-content {
+    flex: 1;
+  }
+  
+  .banner-content p {
+    margin: 0;
+    color: #1565c0;
+    font-weight: 500;
+  }
+  
+  /* Cards */
+  .registrasi-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .registrasi-card.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .registrasi-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-icon {
+    margin-right: 12px;
+    color: #1976d2;
+    transition: transform 0.3s ease;
+  }
+  
+  .registrasi-card:hover .card-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  /* Selection Card */
+  .selection-card {
+    border-top: 3px solid #1976d2;
+  }
+  
+  .instruction {
+    margin-bottom: 20px;
+    color: #546e7a;
+    font-size: 15px;
+  }
+  
+  .status-options {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .status-option {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .status-option.aktif {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+  }
+  
+  .status-option.cuti {
+    background-color: #fff3e0;
+    border: 1px solid #ffe0b2;
+  }
+  
+  .status-option.selected {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  .option-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .option-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .aktif .option-icon-container {
+    background-color: rgba(76, 175, 80, 0.15);
+  }
+  
+  .cuti .option-icon-container {
+    background-color: rgba(255, 152, 0, 0.15);
+  }
+  
+  .aktif .option-icon {
+    color: #2e7d32;
+  }
+  
+  .cuti .option-icon {
+    color: #ef6c00;
+  }
+  
+  .status-option:hover .option-icon-container {
+    transform: scale(1.1);
+  }
+  
+  .option-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .aktif h3 {
+    color: #2e7d32;
+  }
+  
+  .cuti h3 {
+    color: #ef6c00;
+  }
+  
+  .status-option p {
+    margin-bottom: 20px;
+    color: #546e7a;
+    line-height: 1.5;
+  }
+  
+  .option-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .aktif .option-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .cuti .option-button {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .option-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+  
+  .option-button.selected {
+    opacity: 0.8;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+  
+  /* Her-Registrasi Card */
+  .her-registrasi-card {
+    border-top: 3px solid #5c6bc0;
+  }
+  
+  .status-info-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .status-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #546e7a;
+    font-weight: 500;
+  }
+  
+  .status-value {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .status-value.aktif {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .status-value.cuti {
+    background-color: #fff3e0;
+    color: #ef6c00;
+  }
+  
+  .info-text-container {
+    margin-bottom: 20px;
+  }
+  
+  .info-text {
+    color: #546e7a;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .action-button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .action-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .action-button.primary {
+    background-color: #5c6bc0;
+    color: white;
+  }
+  
+  .action-button.secondary {
+    background-color: #eceff1;
+    color: #546e7a;
+  }
+  
+  .action-button.primary:hover {
+    background-color: #3f51b5;
+    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.2);
+  }
+  
+  .action-button.secondary:hover {
+    background-color: #cfd8dc;
+  }
+  
+  /* Timeline Card */
+  .timeline-card {
+    border-top: 3px solid #9c27b0;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 30px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #e0e0e0;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item.completed .timeline-marker {
+    background-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+  }
+  
+  .timeline-item.active .timeline-marker {
+    background-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+  }
+  
+  .timeline-content {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-content {
+    background-color: #f0f4f8;
+    transform: translateX(5px);
+  }
+  
+  .timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .timeline-date {
+    font-size: 13px;
+    color: #90a4ae;
+    margin-bottom: 8px;
+  }
+  
+  .timeline-content p {
+    margin: 0;
+    color: #546e7a;
+  }
+  
+  .timeline-item.completed .timeline-content h3 {
+    color: #2e7d32;
+  }
+  
+  .timeline-item.active .timeline-content h3 {
+    color: #1565c0;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(25, 118, 210, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(25, 118, 210, 0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .registrasi-container {
+      flex-direction: column;
+    }
+    
+    .status-options {
+      flex-direction: column;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+  }

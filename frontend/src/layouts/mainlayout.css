@@ -1,0 +1,41 @@
+/* src/layouts/mainlayout.css */
+/* Pastikan CSS ini menimpa CSS bawaan */
+.layout-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+  }
+  
+  .sidebar-container {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+  }
+  
+  .content-wrapper {
+    padding: 20px;
+    margin-left: 250px; /* Sama dengan lebar sidebar */
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .content-wrapper {
+      margin-left: 0;
+      width: 100%;
+      padding: 10px;
+      padding-top: 60px; /* Ruang untuk sidebar mobile */
+    }
+    
+    .sidebar-container {
+      width: 100%;
+      position: fixed;
+      height: auto;
+      bottom: auto;
+    }
+  }
