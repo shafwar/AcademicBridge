@@ -1,8 +1,6 @@
 # AcademicBridge
 
-AcademicBridge adalah platform manajemen akademik yang dibangun menggunakan:
-- 🚀 Frontend: React.js
-- 🛠️ Backend: Laravel (PHP)
-
----
+AcademicBridge adalah platform akademik mahasiswa yang dibangun menggunakan:
+- Frontend: React.js
+- Backend: Laravel (PHP)
 
